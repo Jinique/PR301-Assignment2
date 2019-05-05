@@ -141,16 +141,6 @@ Please enter the directory to write files to :
             uml_db.add_file(self.source_file, self.write_folder)
             self.db = uml_db.create_db()
 
-    def do_write_db(self, line):
-        uml_db = DbWriter()
-        uml_db.read_db()
-        """
-        if self.db:
-            self.db.read_db()
-        else:
-            print("please write to DB first (**make_db**)")
-        """
-
     # Jin
     def file_path(self, line):
         path = []
@@ -315,10 +305,6 @@ directory provided
     def help_make_db(self):
         print("Save the program data to a database")
 
-    def help_write_db(self):
-        print("Write the data saved in the database")
-
-    # Jin
     def help_pickle(self):
         print("""
 Pickles source file in to target file.                
@@ -362,7 +348,6 @@ Fix target file with PEP8 standard. (re:pycodestyle)
             check_file      Checks that the surce file is a text file and that it contains plantUML
             i_shelve        Shelves all the classes in the module as objects
             make_db         Write the module to a database
-            write_db        Prints the information in the database
             source          Sets the source file to interpret
             write_folder    Sets the folder to write the module to
             interpret       Reads the source file, and writes each class to a seperate Python file

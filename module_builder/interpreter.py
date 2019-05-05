@@ -8,7 +8,6 @@ from module_builder.shelver import Shelver
 class Interpreter:
     # Sarah + Jin
 
-
     language = "Plant UML"
 
     def __init__(self):
@@ -105,20 +104,6 @@ class Interpreter:
         for a_module in self.all_my_modules:
             shelf.shelve_modules(a_module)
         self.my_shelf = shelf.my_shelf_file
-
-    def create_db(self):
-        print(" @ interpreter / create_db")
-        db = DbWriter()
-        """
-        for a_module in self.all_my_modules:
-            i = 1
-            db.write_db(a_module)
-            print(i)
-            i += 1
-        self.my_db = db
-        """
-        for a_module in self.all_my_modules:
-            db.write_db(a_module)
 
 
 if __name__ == "__main__":

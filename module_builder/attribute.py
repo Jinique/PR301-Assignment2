@@ -1,13 +1,5 @@
 class Attribute:
 
-    """define the attributes of a class
-    >>> a = Attribute('first_attribute', 'string')
-    >>> print(a.name)
-    first_attribute
-    >>> print(a.type)
-    str
-    """
-
     def __init__(self, new_name, new_type):
         self.name = new_name.replace(" ", "")
         self.type = self.find_type(new_type)

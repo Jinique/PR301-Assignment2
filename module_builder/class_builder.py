@@ -4,8 +4,6 @@ from module_builder.relationship import Relationship
 
 
 class ClassBuilder:
-    # Sarah + Jin
-
 
     def __init__(self):
         self.name = ""

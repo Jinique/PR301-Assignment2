@@ -1,12 +1,12 @@
 """
 >>> from module_builder.interpreter import Interpreter
 >>> a = Interpreter()
->>> a.add_file('../interpreter/class_diagram_plantUML', 'test_module')
+>>> a.add_file('./test_uml', 'test_module')
 >>> print(a.my_file)
-../interpreter/class_diagram_plantUML
->>> a.add_file('../test_uml', 'testing')
+./test_uml
+>>> a.add_file('./test_uml', 'testing')
 >>> print(a.my_file)
-../test_uml
+./test_uml
 >>> print(len(a.all_my_modules))
 2
 >>> print(len(a.all_my_classbuilders))

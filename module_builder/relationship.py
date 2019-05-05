@@ -1,17 +1,6 @@
 class Relationship:
     # Jin  -- 6 doctest
-    """Builds the class relationship data
-    >>> a = Relationship(('extends', 'Class2'))
-    >>> print(a.name)
-    Class2
-    >>> print(a.type)
-    extends
-    >>> a = Relationship(('comp', 'Class3'))
-    >>> print(a.name)
-    Class3
-    >>> print(a.type)
-    comp
-    """
+
 
     def __init__(self, new_type):
         # Jin

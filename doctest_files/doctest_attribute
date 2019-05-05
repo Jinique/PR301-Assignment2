@@ -1,8 +1,9 @@
 """
-define the attributes of a class
+>>> from module_builder.attribute import Attribute
 >>> a = Attribute('first_attribute', 'string')
 >>> print(a.name)
 first_attribute
 >>> print(a.type)
 str
+
 """

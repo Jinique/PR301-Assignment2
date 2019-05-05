@@ -1,0 +1,10 @@
+"""
+>>> from module_builder.module import Module
+>>> a = Module()
+>>> a.create_module('test_module', ['class1', 'class2'])
+>>> print(a.module_name)
+test_module
+>>> print(len(a.all_my_classbuilders))
+2
+
+"""

@@ -1,0 +1,24 @@
+"""
+>>> from module_builder.interpreter import Interpreter
+>>> a = Interpreter()
+>>> a.add_file('../interpreter/class_diagram_plantUML', 'test_module')
+>>> print(a.my_file)
+../interpreter/class_diagram_plantUML
+>>> a.add_file('../test_uml', 'testing')
+>>> print(a.my_file)
+../test_uml
+>>> print(len(a.all_my_modules))
+2
+>>> print(len(a.all_my_classbuilders))
+18
+>>> print(a.all_my_classbuilders[1].name)
+Module
+>>> print(len(a.all_my_errors))
+0
+>>> print(a.all_my_modules[0].module_name)
+test_module
+>>> a_class = a.all_my_classbuilders[1]
+>>> print(len(a_class.all_my_attributes))
+1
+
+"""

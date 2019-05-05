@@ -5,41 +5,7 @@ from module_builder.relationship import Relationship
 
 class ClassBuilder:
     # Sarah + Jin
-    """Create an instance of the object ClassBuilder
-    that contains a list of the objects attributes, methods
-    and relationships
-    >>> a = ClassBuilder()
-    >>> a.build_class("ClassName", ["att1: string", "att2: string"], \
-        ["Method1(input):integer"], [("comp", "Class2")])
-    >>> print(a.name)
-    ClassName
-    >>> print(a.attributes)
-    ['att1: string', 'att2: string']
-    >>> print(a.methods)
-    ['Method1(input):integer']
-    >>> print(len(a.all_my_attributes))
-    2
-    >>> print(len(a.all_my_methods))
-    1
-    >>> print(len(a.all_my_composite_classes))
-    1
-    >>> print(a.all_my_composite_classes[0])
-    Class2s
-    >>> print(a.relationships)
-    [('comp', 'Class2')]
-    >>> a.build_class("ClassName", ["att1: string", "att2: string"], \
-        ["Method1(input):integer"], [("assos", "Class3")])
-    >>> print(len(a.all_my_associated_classes))
-    1
-    >>> print(a.all_my_associated_classes[0])
-    Class3s
-    >>> a.build_class("ClassName", ["att1: string", "att2: string"], \
-        ["Method1(input):integer"], [("extends", "Class4")])
-    >>> print(len(a.all_my_parent_classes))
-    1
-    >>> print(a.all_my_parent_classes[0])
-    Class4s
-    """
+
 
     def __init__(self):
         self.name = ""

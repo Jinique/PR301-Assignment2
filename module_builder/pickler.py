@@ -3,14 +3,6 @@ from pickle import dump, load, HIGHEST_PROTOCOL
 
 class Pickler:
 
-    """Picking a object and output to a file.
-    >>> import pickle
-    >>> scores = {'korean': 90, 'english': 95, 'mathematics': 85}
-
-    # >>> with open('test.txt', 'wb') as file:
-    # ... pickle.dump(scores, file)
-    """
-
     # >>> pickle.dump(list, f)
     @staticmethod
     def pickling(new_object, outfile):

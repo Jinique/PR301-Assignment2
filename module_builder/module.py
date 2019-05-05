@@ -1,13 +1,6 @@
 class Module:
 
-    """create a module that will hold all the classes
-    >>> a = Module()
-    >>> a.create_module('test_module', ['class1', 'class2'])
-    >>> print(a.module_name)
-    test_module
-    >>> print(len(a.all_my_classbuilders))
-    2
-    """
+
 
     module_name = str
 

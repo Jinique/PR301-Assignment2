@@ -1,20 +1,5 @@
 class Method:
 
-    """Define the methods for each class
-    >>> a = Method('method1', ':string', '(an_input)')
-    >>> print(a.name)
-    method1
-    >>> print(a.input)
-    (an_input)
-    >>> print(a.return_type)
-    str
-    >>> a = Method('method1', '', '()')
-    >>> print(a.input)
-    <BLANKLINE>
-    >>> print(a.return_type)
-    pass
-    """
-
     def __init__(self, new_name, new_return, new_input):
         self.name = new_name.replace("()", "").replace(" ", "")
         self.input = new_input.replace("()", "")

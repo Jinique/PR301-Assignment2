@@ -20,8 +20,8 @@ class Main(Cmd, Help):
         self.temproot = None
 
     def cmdloop(self, name):
-        newName = "Hello " + name + ". "
-        intro = newName + "Welcome to PlantUML to Python Convertor"
+        new_name = "Hello " + name + ". "
+        intro = new_name + "Welcome to PlantUML to Python Convertor"
         return Cmd.cmdloop(self, intro)
 
     def do_current_setting(self, line):

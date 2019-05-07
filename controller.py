@@ -1,9 +1,9 @@
 from module_builder.interpreter import Interpreter
-from cmd import Cmd
 from os import path
+from cmd import Cmd
+from cli.help import Help
 import sys
 import re
-from help import Help
 
 
 class Main(Cmd, Help):
@@ -12,21 +12,17 @@ class Main(Cmd, Help):
         Cmd.__init__(self)
         self.prompt = ">>> "
         self.username = username
-        self.root_directory = root
+        self.root_directory = ""
         self.write_folder = None
         self.source_file = None
-
-    def cmdloop(self, name):
-        new_name = "Hello " + name + ". "
-        intro = new_name + "Welcome to PlantUML to Python Converter"
-        return Cmd.cmdloop(self, intro)
+        self.db = None
 
     def do_current_setting(self, line):
         print(f"""
 root_directory = {self.root_directory}
 write_folder = {self.write_folder}
 source_file = {self.source_file}
-        """)
+            """)
 
     def do_interpret(self, line):
         if self.write_folder is None:
@@ -35,7 +31,7 @@ Please enter the directory to write files to :
 Syntax : write_folder [folder name]
 Example : write_folder out
 Result : Folder to write files are <root>/[folder name]
-            """)
+                """)
         elif self.source_file is None:
             print("Please enter the source file : source [file_name]")
         else:
@@ -46,7 +42,7 @@ Result : Folder to write files are <root>/[folder name]
                 for an_error in uml.all_my_errors:
                     print(an_error)
             print("Interpreting complete")
-        
+
     def do_root(self, line):
         """Change the root directory"""
         self.root_directory = line
@@ -62,7 +58,7 @@ Result : Folder to write files are <root>/[folder name]
         else:
             self.write_folder = line
             print(f"Folder to write files is: {line}")
-        
+
     def do_source(self, line):
         """Change the source file"""
         if self.root_directory:
@@ -140,9 +136,13 @@ Result : Folder to write files are <root>/[folder name]
         print("Closing Down")
         return True
 
+    def cmdloop(self, name):
+        new_name = "Hello " + name + ". "
+        intro = new_name + "Welcome to PlantUML to Python Converter"
+        return Cmd.cmdloop(self, intro)
+
 
 if __name__ == '__main__':
-
     if len(sys.argv) == 2:  # should not have functional code here. eg java main.
         Main().cmdloop(sys.argv[1])  # so should call method from else where
     elif len(sys.argv) == 3:

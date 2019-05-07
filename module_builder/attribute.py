@@ -17,20 +17,4 @@ class Attribute:
         elif "tuple" in self.type:
             return f"        self.{self.name}: {self.type} = ()  # ToDo\n"
         else:
-            return f"        self.{self.name} = None  # ToDo\n"
-
-
-'''
-    @staticmethod
-    def find_type(new_type):
-        if "string" in new_type:
-            return "str"
-        elif "number" in new_type:
-            return "int"
-        elif "list" in new_type:
-            return "list"
-        elif "tuple" in new_type:
-            return "tuple"
-        else:
-            return ""
-'''
+            return f"        self.{self.name} = {self.type}  # ToDo\n"

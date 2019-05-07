@@ -77,7 +77,25 @@ Error - Directory does not exist
 Error - Directory does not exist
 Error - Directory does not exist
 process complete
-
-
+>>> main.root_directory = 'root'
+>>> main.do_write_folder('./')
+Folder to write files is: root/./
+>>> main.source_file = None
+>>> main.do_root('')
+Root directory to read & write files is:
+>>> main.write_folder = 'output'
+>>> main.source_file = 'badtest_uml2'
+>>> main.do_check_file('badtest_uml2')
+Error - File not found
+looking for file at badtest_uml2
+>>> main.do_interpret('')
+Error - File not found
+[Errno 2] No such file or directory: 'badtest_uml2'
+Interpreting complete
+>>> main.source_file = 'badtest_uml'
+>>> main.do_check_file('badtest_uml')
+Error - File must contain plant UML
+there were no class found
+source file meets minimum requirements
 
 """

@@ -85,8 +85,8 @@ Result : Folder to write files are <root>/[folder name]""")
                     print("there were no class found")
                 else:
                     print(f"there are {class_count} class(es) found")
-        except FileNotFoundError:
-            print("Error - File not found")
+        # except FileNotFoundError:
+        #     print("Error - File not found")
         except Exception as e:  # pragma: no cover
             print(e)
         finally:

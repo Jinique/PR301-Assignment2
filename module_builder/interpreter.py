@@ -28,8 +28,7 @@ class Interpreter:
             with open(self.my_file, "rt") as my_file:
                 contents = my_file.read()
                 class_results = re.split(r"}", contents)
-                self.my_relationship_content = \
-                    class_results[len(class_results) - 1]
+                self.my_relationship_content = class_results[len(class_results) - 1]
                 class_results.remove(class_results[len(class_results) - 1])
                 for result in class_results:
                     self.my_class_content.append(result)
@@ -58,7 +57,7 @@ class Interpreter:
 
     def find_classes(self):
         for class_info in self.my_class_content:
-            class_name = class_info.split(' ')[1]
+            class_name = class_info.split(" ")[1]
             attributes = self.get_attribute(class_info)
             methods = self.get_method(class_info)
             relationships = self.get_relationship(class_name)
@@ -84,8 +83,7 @@ class Interpreter:
         relationships = []
         for relationship in self.my_relationship_content.split("\n"):
             if self.find_relationship(relationship, class_name):
-                relationships.append(
-                    self.find_relationship(relationship, class_name))
+                relationships.append(self.find_relationship(relationship, class_name))
         return relationships
 
     def add_module(self, new_module_name, new_classes):

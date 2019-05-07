@@ -20,5 +20,7 @@ test_module
 >>> a_class = a.all_my_classbuilders[1]
 >>> print(len(a_class.all_my_attributes))
 1
+>>> a.find_relationship("ClassA *-- ClassB", "ClassA")
+
 
 """

@@ -25,25 +25,22 @@ class Main(Cmd, Help):
         return Cmd.cmdloop(self, intro)
 
     def do_current_setting(self, line):
-        print(f"""root_directory = {self.root_directory}
+        print(f"""
+root_directory = {self.root_directory}
 write_folder = {self.write_folder}
 source_file = {self.source_file}
-""")
+        """)
 
     def do_interpret(self, line):
         if self.write_folder is None:
-            # Jin
             print("""
 Please enter the directory to write files to : 
-    Syntax : write_folder [folder name]
-    Example : write_folder out
-    Result : Folder to write files are <root>/[folder name]
-    """)
-            # print("Please enter the directory to write files to : write_folder xxxx")
+Syntax : write_folder [folder name]
+Example : write_folder out
+Result : Folder to write files are <root>/[folder name]
+            """)
         elif self.source_file is None:
-            # Jin
             print("Please enter the source file : source [file_name]")
-            # print("Please enter the source file : source xxxx")
         else:
             uml = Interpreter()
             uml.add_file(self.source_file, self.write_folder)
@@ -71,7 +68,6 @@ Please enter the directory to write files to :
         
     def do_source(self, line):
         """Change the source file"""
-
         if self.root_directory:
             self.source_file = self.root_directory + "/" + line
             self.do_check_file(self.source_file)
@@ -112,20 +108,6 @@ Please enter the directory to write files to :
         finally:
             print("source file meets minimum requirements")
 
-    def do_i_shelve(self, line):
-        if self.write_folder is None:
-            print("Please enter the directory to write files to : write_folder xxxx")
-        elif self.source_file is None:
-            print("Please enter the source file : source xxxx")
-        else:
-            uml_shelf = Interpreter()
-            uml_shelf.add_file(self.source_file, self.write_folder)
-            if self.root_directory:
-                uml_shelf.shelve_modules(self.root_directory + "/" + line)
-            else:
-                uml_shelf.shelve_modules(line)
-            print(f"modules shelved to {line}")
-
     def file_path(self, line):
         path = []
         for a_path in line.split(' '):
@@ -150,11 +132,11 @@ Please enter the directory to write files to :
             converter = Interpreter()
             converter.add_file(arg[0], arg[1])
             converter.write_modules()
-            '''
+            """
             if len(converter.all_my_errors) > 0:
                 for an_error in converter.all_my_errors:
                     print(an_error)
-            '''
+            """
             print("process complete")
 
     def do_quit(self, line):

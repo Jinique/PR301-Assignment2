@@ -17,21 +17,12 @@ class Main(Cmd, Help):
         self.source_file = None
         self.db = None
 
-    def do_current_setting(self, line):
-        print(f"""
-root_directory = {self.root_directory}
-write_folder = {self.write_folder}
-source_file = {self.source_file}
-            """)
-
     def do_interpret(self, line):
         if self.write_folder is None:
-            print("""
-Please enter the directory to write files to : 
+            print("""Please enter the directory to write files to :
 Syntax : write_folder [folder name]
 Example : write_folder out
-Result : Folder to write files are <root>/[folder name]
-                """)
+Result : Folder to write files are <root>/[folder name]""")
         elif self.source_file is None:
             print("Please enter the source file : source [file_name]")
         else:
@@ -48,7 +39,7 @@ Result : Folder to write files are <root>/[folder name]
         self.root_directory = line
         if self.source_file:
             self.source_file = self.root_directory + "/" + self.source_file
-        print(f"Root directory to read & write files is:  {line}")
+        print(f"Root directory to read & write files is:{line}")
 
     def do_write_folder(self, line):
         """Change the folder to write files directory"""

@@ -1,19 +1,12 @@
 class Help:
 
     def help_interpret(self):
-        print("""
-Translates your SOURCE plantUML file to a python file in the ROOT 
-directory provided
-
-Update ROOT directory: root [folder_name]
-Example : >>> root interpreter
-
-Update SOURCE file: source [source_file_name]
-Example : >>> source class_diagram_plantUML
-        """)
-
-    def help_current_setting(self):
-        print("displays current path settings on execution")
+        print("Translates your SOURCE plantUML file to a python file in the")
+        print("ROOT directory provided")
+        print("Update ROOT directory: root [folder_name]")
+        print("Example : >>> root interpreter")
+        print("Update SOURCE file: source [source_file_name]")
+        print("Example : >>> source class_diagram_plantUML")
 
     def help_source(self):
         print("Update SOURCE file: source [source_file]")
@@ -31,11 +24,9 @@ Example : >>> source class_diagram_plantUML
         print("Use this function to check if your file is suitable for translation")
 
     def help_convert(self):
-        print("""
-Interprets plantUML file to a python code file.                
-Syntax : convert <source file> <target folder>                
-Example : convert test_uml ./output
-        """)
+        print("Interprets plantUML file to a python code file.")
+        print("Syntax : convert <source file> <target folder>")
+        print("Example : convert test_uml ./output")
 
     def help_quit(self):
         print("Quit the program")

@@ -4,11 +4,48 @@
 >>> source = 'test_uml'
 >>> write_folder = 'output'
 >>> main = Main()
->>> main.do_current_setting("")
-root_directory =
-write_folder = None
-source_file = None
-
+>>> main.do_interpret("")
+Please enter the directory to write files to :
+Syntax : write_folder [folder name]
+Example : write_folder out
+Result : Folder to write files are <root>/[folder name]
+>>> main.do_write_folder("output")
+Folder to write files is: output
+>>> main.do_interpret("")
+Please enter the source file : source [file_name]
+>>> main.do_source("test_uml")
+Source file to interpret is: test_uml
+there are 6 class(es) found
+source file meets minimum requirements
+>>> main.do_root("")
+Root directory to read & write files is:
+>>> main.do_root("./")
+Root directory to read & write files is:./
+>>> main.do_source("test_uml")
+Source file to interpret is: .//.//test_uml
+there are 6 class(es) found
+source file meets minimum requirements
 >>> main.help_check_file()
 Use this function to check if your file is suitable for translation
+>>> main.help_interpret()
+Translates your SOURCE plantUML file to a python file in the
+ROOT directory provided
+Update ROOT directory: root [folder_name]
+Example : >>> root interpreter
+Update SOURCE file: source [source_file_name]
+Example : >>> source class_diagram_plantUML
+>>> main.help_source()
+Update SOURCE file: source [source_file]
+This file will be interpreted
+>>> main.help_root()
+Update ROOT directory: root [file_location]
+Files will be read and written to this location
+>>> main.help_write_folder()
+The folder to which your files will be written
+PLEASE create this folder prior to interpreting your file
+>>> main.help_convert()
+Interprets plantUML file to a python code file.
+Syntax : convert <source file> <target folder>
+Example : convert test_uml ./output
+
 """

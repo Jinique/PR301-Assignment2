@@ -41,10 +41,10 @@ class Interpreter:
     def find_relationship(relationship, class_name):
         if relationship.startswith(class_name):
             if re.search(r"\*--", relationship):
-                com_class = relationship.split(" ")[2]
+                com_class = relationship.split(" ")[4]
                 return tuple(("comp", com_class))
             if re.search(r"--", relationship):
-                as_class = relationship.split(" ")[2]
+                as_class = relationship.split(" ")[4]
                 return tuple(("assos", as_class))
         elif relationship.endswith(class_name):
             if re.search(r"<\|--", relationship):

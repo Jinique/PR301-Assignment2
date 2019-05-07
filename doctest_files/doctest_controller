@@ -1,0 +1,14 @@
+"""
+>>> from controller import Main
+>>> root = './'
+>>> source = 'test_uml'
+>>> write_folder = 'output'
+>>> main = Main()
+>>> main.do_current_setting("")
+root_directory =
+write_folder = None
+source_file = None
+
+>>> main.help_check_file()
+Use this function to check if your file is suitable for translation
+"""

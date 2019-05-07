@@ -15,9 +15,6 @@ class Main(Cmd, Help):
         self.root_directory = root
         self.write_folder = None
         self.source_file = None
-        self.db = None
-        # self.tempsource = None
-        # self.temproot = None
 
     def cmdloop(self, name):
         new_name = "Hello " + name + ". "

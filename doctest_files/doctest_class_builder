@@ -28,8 +28,5 @@ Class3s
 1
 >>> print(a.all_my_parent_classes[0])
 Class4s
->>> a.all_myparent_classes = ["Class1", "Class2"]
->>> a.print_class()
-'class ClassName(Class1)(Class2):\n\n    def __init__(self):\n        self.att1: str = ""  # ToDo\n        self.att2: str = ""  # ToDo\n        self.all_my_Class2s = []\n\n    def Method1(self, input) ->int:\n        # ToDo\n        pass\n\n'
 
 """

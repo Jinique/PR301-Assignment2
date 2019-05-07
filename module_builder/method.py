@@ -16,7 +16,7 @@ class Method:
         elif "tuple" in new_type:
             return "tuple"
         else:
-            return None
+            return ""
 
     def get_return(self, new_return):
         if new_return:

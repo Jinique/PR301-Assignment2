@@ -66,19 +66,6 @@ class Interpreter:
             attributes = self.get_attribute(class_info)
             methods = self.get_method(class_info)
             relationships = self.get_relationship(class_name)
-            # for line in class_info.split("\n"):
-            #     if line.find(":") != -1 and line.find("(") == -1:
-            #       attributes.append(line)
-
-            # for line in class_info.split("\n"):
-            #     if line.find("(") != -1:
-            #        methods.append(line)
-
-            # for relationship in self.my_relationship_content.split("\n"):
-            #     if self.find_relationship(relationship, class_name):
-            #       relationships.append(
-            #           self.find_relationship(relationship, class_name))
-
             self.add_class(class_name, attributes, methods, relationships)
 
     @staticmethod

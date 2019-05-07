@@ -66,17 +66,35 @@ class Interpreter:
             attributes = []
             methods = []
             relationships = []
-            for line in class_info.split("\n"):
-                if line.find(":") != -1 and line.find("(") == -1:
-                    attributes.append(line)
+
+            attributes.append(self.find_attribute(class_info))
+            # for line in class_info.split("\n"):
+            #     if line.find(":") != -1 and line.find("(") == -1:
+            #       attributes.append(line)
+
             for line in class_info.split("\n"):
                 if line.find("(") != -1:
                     methods.append(line)
+
             for relationship in self.my_relationship_content.split("\n"):
                 if self.find_relationship(relationship, class_name):
                     relationships.append(
                         self.find_relationship(relationship, class_name))
+
             self.add_class(class_name, attributes, methods, relationships)
+
+    @staticmethod
+    def find_attribute(class_info):
+        attributes = []
+        for line in class_info.split("\n"):
+            if line.find(":") != -1 and line.find("(") == -1:
+                attributes.append(line)
+        return attributes
+
+    @staticmethod
+    def find_method(class_info):
+        for line in class_info.split("\n"):
+            if line.find("(") != -1:
 
     def add_module(self, new_module_name, new_classes):
         new_module = Module()

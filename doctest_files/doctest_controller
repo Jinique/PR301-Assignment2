@@ -7,7 +7,7 @@ expected str, bytes or os.PathLike object, not NoneType
 Please enter the directory to write files to :
 Syntax : write_folder [folder name]
 Example : write_folder out
-Result : Folder to write files are <root>/[folder name]
+Result : Folder to write files are /[folder name]
 >>> main.do_write_folder("output")
 Folder to write files is: output
 >>> main.do_interpret("")

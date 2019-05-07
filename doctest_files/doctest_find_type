@@ -1,0 +1,15 @@
+"""
+>>> from module_builder.find_type import FindType
+>>> a = FindType()
+>>> a.find_type("string")
+'str'
+>>> a.find_type("int")
+'int'
+>>> a.find_type("list")
+'list'
+>>> a.find_type("tuple")
+'tuple'
+>>> a.find_type("???")
+''
+
+"""

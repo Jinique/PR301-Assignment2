@@ -4,7 +4,7 @@ class FindType:
     def find_type(new_type):
         if "string" in new_type:
             return "str"
-        elif "number" in new_type:
+        elif "int" in new_type:
             return "int"
         elif "list" in new_type:
             return "list"

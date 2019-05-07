@@ -21,6 +21,11 @@ test_module
 >>> print(len(a_class.all_my_attributes))
 1
 >>> a.find_relationship("ClassA *-- ClassB", "ClassA")
-
+('comp', 'ClassB')
+>>> a.find_relationship("ClassA -- ClassB", "ClassA")
+('assos', 'ClassB')
+>>> a.find_relationship("ClassA -|- ClassB", "ClassA")
+>>> a.find_relationship("ClassB <|-- ClassA", "ClassA")
+('extends', 'ClassB')
 
 """

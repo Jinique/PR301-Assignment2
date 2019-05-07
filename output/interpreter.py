@@ -6,8 +6,8 @@ class Interpreter:
         self.my_class_content: list = []  # ToDo
         self.my_relationship_content: str = ""  # ToDo
         self.all_my_errors: list = []  # ToDo
-        self.all_my_"0...*"s = []
-        self.all_my_"0...*"s = []
+        self.all_my_*--s = []
+        self.all_my_*--s = []
 
     def add_file(self, file_name, new_module_name) ->None:
         # ToDo

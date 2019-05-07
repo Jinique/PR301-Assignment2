@@ -47,5 +47,7 @@ PLEASE create this folder prior to interpreting your file
 Interprets plantUML file to a python code file.
 Syntax : convert <source file> <target folder>
 Example : convert test_uml ./output
+>>> main.help_quit()
+Quit the program
 
 """

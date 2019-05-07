@@ -1,10 +1,13 @@
+from .find_type import FindType
+
+
 class Method:
 
     def __init__(self, new_name, new_return, new_input):
         self.name = new_name.replace("()", "").replace(" ", "")
         self.input = new_input.replace("()", "")
         self.return_type = self.get_return(new_return)
-
+    '''
     @staticmethod
     def find_type(new_type):
         if "string" in new_type:
@@ -17,10 +20,11 @@ class Method:
             return "tuple"
         else:
             return ""
+    '''
 
     def get_return(self, new_return):
         if new_return:
-            return self.find_type(new_return)
+            return FindType.find_type(new_return)
         else:
             return "pass"
 

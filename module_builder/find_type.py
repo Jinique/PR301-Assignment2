@@ -1,4 +1,4 @@
-class TypeFinder:
+class FindType:
 
     @staticmethod
     def find_type(new_type):

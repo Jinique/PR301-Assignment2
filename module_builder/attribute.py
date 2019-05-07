@@ -1,8 +1,11 @@
+from .find_type import FindType
+
+
 class Attribute:
 
     def __init__(self, new_name, new_type):
         self.name = new_name.replace(" ", "")
-        self.type = self.find_type(new_type)
+        self.type = FindType.find_type(new_type)
 
     def __str__(self):
         if "str" in self.type:
@@ -16,6 +19,8 @@ class Attribute:
         else:
             return f"        self.{self.name} = None  # ToDo\n"
 
+
+'''
     @staticmethod
     def find_type(new_type):
         if "string" in new_type:
@@ -28,3 +33,4 @@ class Attribute:
             return "tuple"
         else:
             return ""
+'''

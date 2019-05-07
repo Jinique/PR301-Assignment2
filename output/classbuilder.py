@@ -5,9 +5,9 @@ class ClassBuilder:
         self.attributes: str = ""  # ToDo
         self.methods: str = ""  # ToDo
         self.relationships: str = ""  # ToDo
-        self.all_my_*--s = []
-        self.all_my_*--s = []
-        self.all_my_*--s = []
+        self.all_my_s = []
+        self.all_my_s = []
+        self.all_my_s = []
 
     def add_class_attributes(self) ->:
         # ToDo

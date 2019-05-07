@@ -2,12 +2,12 @@ class Interpreter:
 
     def __init__(self):
         self.my_file: str = ""  # ToDo
-        self.my_shelf =   # ToDo
+        self.my_shelf = None  # ToDo
         self.my_class_content: list = []  # ToDo
         self.my_relationship_content: str = ""  # ToDo
         self.all_my_errors: list = []  # ToDo
-        self.all_my_*--s = []
-        self.all_my_*--s = []
+        self.all_my_Modules = []
+        self.all_my_s = []
 
     def add_file(self, file_name, new_module_name) ->:
         # ToDo

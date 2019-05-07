@@ -1,9 +1,8 @@
 """
 >>> from controller import Main
->>> root = './'
->>> source = 'test_uml'
->>> write_folder = 'output'
 >>> main = Main()
+>>> main.do_check_file('')
+expected str, bytes or os.PathLike object, not NoneType
 >>> main.do_interpret("")
 Please enter the directory to write files to :
 Syntax : write_folder [folder name]
@@ -49,5 +48,36 @@ Syntax : convert <source file> <target folder>
 Example : convert test_uml ./output
 >>> main.help_quit()
 Quit the program
+>>> main.do_root('')
+Root directory to read & write files is:
+>>> main.do_source('test_uml')
+Source file to interpret is: test_uml
+there are 6 class(es) found
+source file meets minimum requirements
+>>> main.do_interpret('')
+Interpreting complete
+>>> main.do_quit('')
+Closing Down
+True
+>>> main.file_path('')
+[]
+>>> main.do_convert('test_uml ./output')
+process complete
+>>> main.do_convert('./output')
+./output is not a FILE
+list index out of range
+>>> main.do_convert('test_uml')
+list index out of range
+>>> main.do_convert('test_uml ./outputbad')
+./outputbad is not a DIR
+Error - Directory does not exist
+Error - Directory does not exist
+Error - Directory does not exist
+Error - Directory does not exist
+Error - Directory does not exist
+Error - Directory does not exist
+process complete
+
+
 
 """

@@ -73,7 +73,7 @@ Result : Folder to write files are <root>/[folder name]""")
         except FileNotFoundError:
             print("Error - File not found")
             print(f"looking for file at {self.source_file}")
-        except Exception as e:
+        except Exception as e:  # pragma: no cover
             print(e)
 
     def check_class(self):
@@ -87,7 +87,7 @@ Result : Folder to write files are <root>/[folder name]""")
                     print(f"there are {class_count} class(es) found")
         except FileNotFoundError:
             print("Error - File not found")
-        except Exception as e:
+        except Exception as e:  # pragma: no cover
             print(e)
         finally:
             print("source file meets minimum requirements")
@@ -110,7 +110,7 @@ Result : Folder to write files are <root>/[folder name]""")
                 pass
             else:
                 print(f"{arg[1]} is not a DIR")
-        except Exception as e:
+        except Exception as e:  # pragma: no cover
             print(e)
         if len(arg) == 2:
             converter = Interpreter()
@@ -127,13 +127,13 @@ Result : Folder to write files are <root>/[folder name]""")
         print("Closing Down")
         return True
 
-    def cmdloop(self, name):
+    def cmdloop(self, name):  # pragma: no cover
         new_name = "Hello " + name + ". "
         intro = new_name + "Welcome to PlantUML to Python Converter"
         return Cmd.cmdloop(self, intro)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     if len(sys.argv) == 2:  # should not have functional code here. eg java main.
         Main().cmdloop(sys.argv[1])  # so should call method from else where
     elif len(sys.argv) == 3:

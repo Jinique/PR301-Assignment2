@@ -16,12 +16,12 @@ class Main(Cmd, Help):
         self.write_folder = None
         self.source_file = None
         self.db = None
-        self.tempsource = None
-        self.temproot = None
+        # self.tempsource = None
+        # self.temproot = None
 
     def cmdloop(self, name):
         new_name = "Hello " + name + ". "
-        intro = new_name + "Welcome to PlantUML to Python Convertor"
+        intro = new_name + "Welcome to PlantUML to Python Converter"
         return Cmd.cmdloop(self, intro)
 
     def do_current_setting(self, line):
@@ -126,16 +126,6 @@ Please enter the directory to write files to :
                 uml_shelf.shelve_modules(line)
             print(f"modules shelved to {line}")
 
-    def do_make_db(self, line):
-        if self.write_folder is None:
-            print("Please enter the directory to write files to : write_folder xxxx")
-        elif self.source_file is None:
-            print("Please enter the source file : source xxxx")
-        else:
-            uml_db = Interpreter()
-            uml_db.add_file(self.source_file, self.write_folder)
-            self.db = uml_db.create_db()
-
     def file_path(self, line):
         path = []
         for a_path in line.split(' '):
@@ -170,28 +160,6 @@ Please enter the directory to write files to :
     def do_quit(self, line):
         print("Closing Down")
         return True
-    """
-    def do_print_uml(self, line):
-        with open(self.source_file, "rt") as my_file:
-            contents = my_file.read()
-        in_file = self.root_directory + "plant_uml.png"
-        with open(in_file, 'wb') as fd:
-            fd.write(contents.encode('utf-8'))
-        print('==> INPUT FILE:')
-        print(in_file)
-        outfile = render_file(
-            in_file,
-            renderopts={
-                'engine': 'plantuml',
-                'format': 'png'
-            },
-            cacheopts={
-                'use_cache': False
-            }
-        )
-        print('==> OUTPUT FILE:')
-        print(outfile)
-    """
 
 
 if __name__ == '__main__':

@@ -239,7 +239,7 @@
 <p id="t58" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t59" class="stm run hide_run">    <span class="key">def</span> <span class="nam">find_classes</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t60" class="stm run hide_run">        <span class="key">for</span> <span class="nam">class_info</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">my_class_content</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t61" class="stm run hide_run">            <span class="nam">class_name</span> <span class="op">=</span> <span class="nam">class_info</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">' '</span><span class="op">)</span><span class="op">[</span><span class="num">1</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
+<p id="t61" class="stm run hide_run">            <span class="nam">class_name</span> <span class="op">=</span> <span class="nam">class_info</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">" "</span><span class="op">)</span><span class="op">[</span><span class="num">1</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t62" class="stm run hide_run">            <span class="nam">attributes</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_attribute</span><span class="op">(</span><span class="nam">class_info</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t63" class="stm run hide_run">            <span class="nam">methods</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_method</span><span class="op">(</span><span class="nam">class_info</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="stm run hide_run">            <span class="nam">relationships</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_relationship</span><span class="op">(</span><span class="nam">class_name</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -265,8 +265,8 @@
 <p id="t84" class="stm run hide_run">        <span class="nam">relationships</span> <span class="op">=</span> <span class="op">[</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t85" class="stm run hide_run">        <span class="key">for</span> <span class="nam">relationship</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">my_relationship_content</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">"\n"</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t86" class="stm run hide_run">            <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">find_relationship</span><span class="op">(</span><span class="nam">relationship</span><span class="op">,</span> <span class="nam">class_name</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t87" class="stm run hide_run">                <span class="nam">relationships</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t88" class="pln">                    <span class="nam">self</span><span class="op">.</span><span class="nam">find_relationship</span><span class="op">(</span><span class="nam">relationship</span><span class="op">,</span> <span class="nam">class_name</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t87" class="stm run hide_run">                <span class="nam">relationships</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">find_relationship</span><span class="op">(</span><span class="nam">relationship</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t88" class="pln">                                                            <span class="nam">class_name</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t89" class="stm run hide_run">        <span class="key">return</span> <span class="nam">relationships</span><span class="strut">&nbsp;</span></p>
 <p id="t90" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t91" class="stm run hide_run">    <span class="key">def</span> <span class="nam">add_module</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">new_module_name</span><span class="op">,</span> <span class="nam">new_classes</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -296,7 +296,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.3</a>,
-            created at 2019-05-08 06:41
+            created at 2019-05-08 06:45
         </p>
     </div>
 </div>

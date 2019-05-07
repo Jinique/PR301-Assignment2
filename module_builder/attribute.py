@@ -28,8 +28,3 @@ class Attribute:
             return "tuple"
         else:
             return ""
-
-
-if __name__ == "__main__":
-    from doctest import testmod
-    testmod()

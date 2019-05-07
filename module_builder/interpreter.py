@@ -1,12 +1,9 @@
 import re
 from module_builder.class_builder import ClassBuilder
 from module_builder.module import Module
-from module_builder.shelver import Shelver
-# from junk.database import DbWriter
 
 
 class Interpreter:
-    # Sarah + Jin
 
     language = "Plant UML"
 
@@ -98,14 +95,3 @@ class Interpreter:
                 except FileNotFoundError as e:
                     self.all_my_errors.append(e)
                     print("Error - Directory does not exist")
-
-    def shelve_modules(self, shelf_file):
-        shelf = Shelver(shelf_file)
-        for a_module in self.all_my_modules:
-            shelf.shelve_modules(a_module)
-        self.my_shelf = shelf.my_shelf_file
-
-
-if __name__ == "__main__":
-    from doctest import testmod
-    testmod()

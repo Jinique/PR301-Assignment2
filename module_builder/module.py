@@ -1,7 +1,5 @@
 class Module:
 
-
-
     module_name = str
 
     def __init__(self):
@@ -22,8 +20,3 @@ class Module:
             file_name = a_class.name.lower() + ".py"
             my_files.append(tuple((file_name, file_data)))
         return (folder_name, my_files)
-
-
-if __name__ == "__main__":
-    from doctest import testmod
-    testmod()

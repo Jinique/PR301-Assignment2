@@ -1,12 +1,7 @@
 from module_builder.interpreter import Interpreter
-from module_builder.autopep import Pep8Formatter
-from module_builder.pickler import Pickler
-# from .junk.database import DbWriter
 from cmd import Cmd
-# from plantweb.render import render_file
 from os import path
 import sys
-import shutil
 import re
 from help import Help
 
@@ -25,10 +20,10 @@ class Main(Cmd, Help):
         self.temproot = None
 
     def cmdloop(self, name):
-        intro = "Hello " + name + ". Welcome to PlantUML to Python Convertor"
+        newName = "Hello " + name + ". "
+        intro = newName + "Welcome to PlantUML to Python Convertor"
         return Cmd.cmdloop(self, intro)
 
-    # Jin
     def do_current_setting(self, line):
         print(f"""root_directory = {self.root_directory}
 write_folder = {self.write_folder}
@@ -101,7 +96,6 @@ Please enter the directory to write files to :
         except Exception as e:
             print(e)
 
-    # Jin
     def check_class(self):
         try:
             with open(self.source_file, "rt") as new_file:
@@ -142,7 +136,6 @@ Please enter the directory to write files to :
             uml_db.add_file(self.source_file, self.write_folder)
             self.db = uml_db.create_db()
 
-    # Jin
     def file_path(self, line):
         path = []
         for a_path in line.split(' '):
@@ -152,28 +145,6 @@ Please enter the directory to write files to :
                 # print(striped_path)
         return path
 
-    # Jin
-    def do_pickle(self, line):
-        arg = self.file_path(line)
-        if len(arg) == 2:
-            pickle = Pickler()
-            pickle.pickling(arg[0], arg[1])
-            print(f"{arg[0]}", "pickled")
-        else:
-            print('must have 2 arguments, please use "help" for more info')
-
-    # Jin
-    def do_unpickle(self, line):
-        arg = self.file_path(line)
-        if len(arg) == 1:
-            pickle = Pickler()
-            data = pickle.unpickling(arg[0])
-            print(data)
-            print(f"{arg[0]}", "unpickled")
-        else:
-            print("invalid command. must have 1 args")
-
-    # Jin
     def do_convert(self, line):
         arg = self.file_path(line)
         try:
@@ -195,20 +166,6 @@ Please enter the directory to write files to :
                     print(an_error)
             '''
             print("process complete")
-
-    # Jin
-    def do_pep8(self, line):
-        arg = self.file_path(line)
-        if len(arg) == 1:
-            formatter = Pep8Formatter()
-            source = arg[0]
-            dest = source + ".bak"
-            shutil.copy(source, dest)
-            formatter.pep8_format(source)
-            print("Autopep8 complete! original file has been saved to "
-                  + dest)
-        else:
-            print('invalid command. please use "help pep8" for examples')
 
     def do_quit(self, line):
         print("Closing Down")
@@ -235,21 +192,6 @@ Please enter the directory to write files to :
         print('==> OUTPUT FILE:')
         print(outfile)
     """
-
-    # Jin
-    def do_setup(self, line):
-        from subprocess import run
-        # bash = "autopep8 --in-place --aggressive --aggressive " + line
-        # import subprocess
-        # process = subprocess.Popen(bash.split(), stdout
-        #
-        # =subprocess.PIPE)
-        # output, error = process.communicate()
-        # print(output)
-        # call("root interpreter")
-        # subprocess.call("source class_diagram_plantUML")
-        # subprocess.call("write_folder out")
-        run(["root interpreter"])
 
 
 if __name__ == '__main__':

@@ -70,8 +70,3 @@ class ClassBuilder:
         for x in self.all_my_methods:
             string += f"{x}"
         return string
-
-
-if __name__ == "__main__":
-    from doctest import testmod
-    testmod()

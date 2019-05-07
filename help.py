@@ -55,45 +55,11 @@ directory provided
     """
 
     @staticmethod
-    def help_i_shelve(self):
-        print("Store the class data in a \'shelf\' for later use")
-
-    @staticmethod
-    def help_make_db(self):
-        print("Save the program data to a database")
-
-    @staticmethod
-    def help_pickle(self):
-        print("""
-Pickles source file in to target file.                
-    Syntax : pickle <source file> <target file>                
-    Example : pickle test_uml test_uml.dat
-        """)
-
-    @staticmethod
-    def help_unpickle(self):
-        print("""
-Unpickles the source file                
-    Syntax : unpickle <source file>                
-    Example : unpickle test_uml.dat
-        """)
-
-    @staticmethod
     def help_convert(self):
         print("""
 Interprets plantUML file to a python code file.                
     Syntax : convert <source file> <target folder>                
     Example : convert test_uml ./output
-        """)
-
-    @staticmethod
-    def help_pep8(self):
-        print("""
-Fix target file with PEP8 standard. (re:pycodestyle)
-    NOTE : original file will be automatically back up to
-           filename.extension.bak                
-    Syntax : pep8 <source file>                
-    Example : pep8 test_format.py
         """)
 
     @staticmethod

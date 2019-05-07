@@ -1,9 +1,0 @@
-"""
->>> from module_builder.pickler import Pickler
->>> import pickle
->>> scores = {'korean': 90, 'english': 95, 'mathematics': 85}
-
-# >>> with open('test.txt', 'wb') as file:
-# ... pickle.dump(scores, file)
-
-"""

@@ -33,8 +33,3 @@ class Method:
             return f"    def {self.name}" \
                 f"(self) ->{self.return_type}:\n        " \
                 f"# ToDo\n        pass\n\n"
-
-
-if __name__ == "__main__":
-    from doctest import testmod
-    testmod()

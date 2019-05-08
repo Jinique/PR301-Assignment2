@@ -10,5 +10,5 @@ def test():
     doctest.testfile('doctest_files/doctest_find_type', verbose=1)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     test()

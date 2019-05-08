@@ -5,14 +5,14 @@
 first_attribute
 >>> print(a.type)
 str
->>> a = Attribute('first_attribute', 'int')
->>> print(a.type)
+>>> b = Attribute('first_attribute', 'int')
+>>> print(b.type)
 int
->>> a = Attribute('first_attribute', 'list')
->>> print(a.type)
+>>> c = Attribute('first_attribute', 'list')
+>>> print(c.type)
 list
->>> a = Attribute('first_attribute', 'tuple')
->>> print(a.type)
+>>> d = Attribute('first_attribute', 'tuple')
+>>> print(d.type)
 tuple
 
 """

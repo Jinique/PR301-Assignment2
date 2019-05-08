@@ -18,15 +18,17 @@ ClassName
 Class2s
 >>> print(a.relationships)
 [('comp', 'Class2')]
->>> a.build_class("ClassName", ["att1: string", "att2: string"], ["Method1(input):integer"], [("assos", "Class3")])
+>>> a.build_class("ClassName", ["att1: string", "att2: int"], ["Method1(input):integer"], [("assos", "Class3")])
 >>> print(len(a.all_my_associated_classes))
 1
 >>> print(a.all_my_associated_classes[0])
 Class3s
->>> a.build_class("ClassName", ["att1: string", "att2: string"], ["Method1(input):integer"], [("extends", "Class4")])
+>>> a.build_class("ClassName", ["att1: list", "att2: tuple"], ["Method1(input):integer"], [("extends", "Class4"), ("extends", "Class5")])
 >>> print(len(a.all_my_parent_classes))
-1
+2
 >>> print(a.all_my_parent_classes[0])
 Class4s
+>>> a.print_class()
+'class ClassName(Class4s)(Class5s):\n\n    def __init__(self):\n        self.att1: str = ""  # ToDo\n        self.att2: str = ""  # ToDo\n        self.att1: str = ""  # ToDo\n        self.att2: int = 1  # ToDo\n        self.att1: list = []  # ToDo\n        self.att2: tuple = ()  # ToDo\n        self.all_my_Class2s = []\n\n    def Method1(self, input) ->int:\n        # ToDo\n        pass\n\n    def Method1(self, input) ->int:\n        # ToDo\n        pass\n\n    def Method1(self, input) ->int:\n        # ToDo\n        pass\n\n'
 
 """

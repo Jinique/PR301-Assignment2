@@ -6,16 +6,15 @@ class FindType:
     @staticmethod
     def find_type(new_type):
         if "string" in new_type:
-            print("first check point")
             return TypeStringFactory()
         elif "int" in new_type:
-            TypeIntFactory()
+            return TypeIntFactory()
         elif "list" in new_type:
-            TypeListFactory()
+            return TypeListFactory()
         elif "tuple" in new_type:
-            TypeTupleFactory()
+            return TypeTupleFactory()
         else:
-            TypeNoneFactory()
+            return TypeNoneFactory()
 
 
 # Product
@@ -28,7 +27,6 @@ class Type(metaclass=ABCMeta):
 # ConcreteProduct A
 class TypeString(Type):
     def __str__(self):
-        print("third check point")
         return "str"
 
 
@@ -69,44 +67,33 @@ class Factory(metaclass=ABCMeta):
 # ConcreteCreator A
 class TypeStringFactory(Factory):
     def get_type(self):
-        print("second check point")
         print(TypeString())
 
 
 # ConcreteCreator B
 class TypeIntFactory(Factory):
     def get_type(self):
-        TypeInt()
+        print(TypeInt())
 
 
 # ConcreteCreator C
 class TypeListFactory(Factory):
     def get_type(self):
-        TypeList()
+        print(TypeList())
 
 
 # ConcreteCreator D
 class TypeTupleFactory(Factory):
     def get_type(self):
-        TypeTuple()
+        print(TypeTuple())
 
 
 # ConcreteCreator E
 class TypeNoneFactory(Factory):
     def get_type(self):
-        TypeNone()
-
-
-class Testing:
-    def __init__(self):
-        self.call()
-
-    def __str__(self):
-        return "BBC"
-
-    def call(self):
-        return "Abc"
+        print(TypeNone())
 
 
 if __name__ == "__main__":  # pragma: no cover
     FindType.find_type("string")
+    FindType.find_type("int")

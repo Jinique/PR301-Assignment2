@@ -5,7 +5,7 @@ class Attribute:
 
     def __init__(self, new_name, new_type):
         self.name = new_name.replace(" ", "")
-        self.type = FindType.find_type(new_type)
+        self.type = str(FindType.find_type(new_type))
 
     def __str__(self):
         if "str" in self.type:

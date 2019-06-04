@@ -6,15 +6,15 @@ class FindType:
     @staticmethod
     def find_type(new_type):
         if "string" in new_type:
-            return TypeStringFactory()
+            return str(TypeStringFactory())
         elif "int" in new_type:
-            return TypeIntFactory()
+            return str(TypeIntFactory())
         elif "list" in new_type:
-            return TypeListFactory()
+            return str(TypeListFactory())
         elif "tuple" in new_type:
-            return TypeTupleFactory()
+            return str(TypeTupleFactory())
         else:
-            return TypeNoneFactory()
+            return str(TypeNoneFactory())
 
 
 # Product
@@ -56,44 +56,48 @@ class TypeNone(Type):
 
 # Creator
 class Factory(metaclass=ABCMeta):
-    def __init__(self):
-        self.get_type()
-
     @abstractmethod
-    def get_type(self):
-        raise NotImplementedError
+    def __init__(self):
+        NotImplementedError
+
+    def __str__(self):
+        return self.value
 
 
 # ConcreteCreator A
 class TypeStringFactory(Factory):
-    def get_type(self):
-        print(TypeString())
+    def __init__(self):
+        self.value = str(TypeString())
 
 
 # ConcreteCreator B
 class TypeIntFactory(Factory):
-    def get_type(self):
-        print(TypeInt())
+    def __init__(self):
+        self.value = str(TypeInt())
 
 
 # ConcreteCreator C
 class TypeListFactory(Factory):
-    def get_type(self):
-        print(TypeList())
+    def __init__(self):
+        self.value = str(TypeList())
 
 
 # ConcreteCreator D
 class TypeTupleFactory(Factory):
-    def get_type(self):
-        print(TypeTuple())
+    def __init__(self):
+        self.value = str(TypeTuple())
 
 
 # ConcreteCreator E
 class TypeNoneFactory(Factory):
-    def get_type(self):
-        print(TypeNone())
+    def __init__(self):
+        self.value = str(TypeNone())
 
 
 if __name__ == "__main__":  # pragma: no cover
-    FindType.find_type("string")
-    FindType.find_type("int")
+    # print(TypeStringFactory())
+    print(TypeString())
+    print(TypeStringFactory())
+    print(FindType.find_type("string"))
+
+

@@ -1,5 +1,4 @@
 from .find_type import FindType
-from .find_type import
 
 
 class Method:
@@ -11,7 +10,7 @@ class Method:
 
     def get_return(self, new_return):
         if new_return:
-            return FindType.find_type(new_return)
+            return str(FindType.find_type(new_return))
         else:
             return "pass"
 

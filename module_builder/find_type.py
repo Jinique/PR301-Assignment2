@@ -99,5 +99,3 @@ if __name__ == "__main__":  # pragma: no cover
     print(TypeString())
     print(TypeStringFactory())
     print(FindType.find_type("string"))
-
-

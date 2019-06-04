@@ -7,7 +7,7 @@ class FindType:
     def find_type(new_type):
         if "string" in new_type:
             print("first check point")
-            TypeStringFactory()
+            return TypeStringFactory()
         elif "int" in new_type:
             TypeIntFactory()
         elif "list" in new_type:
@@ -20,42 +20,39 @@ class FindType:
 
 # Product
 class Type(metaclass=ABCMeta):
-    def __init__(self):
-        self.return_type()
-
     @abstractmethod
-    def return_type(self) -> str:
+    def __str__(self):
         raise NotImplementedError
 
 
 # ConcreteProduct A
 class TypeString(Type):
-    def return_type(self) -> str:
+    def __str__(self):
         print("third check point")
         return "str"
 
 
 # ConcreteProduct B
 class TypeInt(Type):
-    def return_type(self) -> str:
+    def __str__(self):
         return "int"
 
 
 # ConcreteProduct C
 class TypeList(Type):
-    def return_type(self) -> str:
+    def __str__(self):
         return "list"
 
 
 # ConcreteProduct D
 class TypeTuple(Type):
-    def return_type(self) -> str:
+    def __str__(self):
         return "tuple"
 
 
 # ConcreteProduct E
 class TypeNone(Type):
-    def return_type(self) -> str:
+    def __str__(self):
         return ""
 
 
@@ -100,5 +97,16 @@ class TypeNoneFactory(Factory):
         TypeNone()
 
 
+class Testing:
+    def __init__(self):
+        self.call()
+
+    def __str__(self):
+        return "BBC"
+
+    def call(self):
+        return "Abc"
+
+
 if __name__ == "__main__":  # pragma: no cover
-    print(FindType.find_type("string"))
+    FindType.find_type("string")

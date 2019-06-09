@@ -1,4 +1,5 @@
 from module_builder.interpreter import Interpreter
+from module_builder.validator_strategy import ClassValidator, FileValidator, Validator
 from os import path
 from cmd import Cmd
 from cli.help import Help
@@ -61,40 +62,10 @@ Result : Folder to write files are /[folder name]"""
             self.do_check_file(self.source_file)
 
     def do_check_file(self, line):
-        try:
-            with open(self.source_file, "rt") as my_file:
-                if my_file.read().find("@startuml") != -1:
-                    if self.root_directory:
-                        print(
-                            f"Source file to interpret is: "
-                            f"{self.root_directory}/{line}"
-                        )
-                    else:
-                        print(f"Source file to interpret is: {line}")
-                else:
-                    print("Error - File must contain plant UML")
-                self.check_class()
-        except FileNotFoundError:
-            print("Error - File not found")
-            print(f"looking for file at {self.source_file}")
-        except Exception as e:  # pragma: no cover
-            print(e)
-
-    def check_class(self):
-        try:
-            with open(self.source_file, "rt") as new_file:
-                content = new_file.read()
-                class_count = content.count("class ")
-                if class_count < 1:
-                    print("there were no class found")
-                else:
-                    print(f"there are {class_count} class(es) found")
-        # except FileNotFoundError:
-        #     print("Error - File not found")
-        except Exception as e:  # pragma: no cover
-            print(e)
-        finally:
-            print("source file meets minimum requirements")
+        validator = Validator(FileValidator())
+        validator.run(self.source_file, self.root_directory, line)
+        validator = Validator(ClassValidator())
+        validator.run(self.source_file, self.root_directory, line)
 
     def file_path(self, line):
         path = []
